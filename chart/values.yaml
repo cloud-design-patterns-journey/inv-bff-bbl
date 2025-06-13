@@ -10,9 +10,15 @@ service:
   port: 3000
 
 backend:
-  url: http://inv-bff-bbl:3000
+  url: http://inv-svc:8080
 
-resources: {}
+resources:
+  limits:
+    cpu: 200m
+    memory: 256Mi
+  requests:
+    cpu: 200m
+    memory: 256Mi
 
 autoscaling:
   enabled: true
